@@ -1,0 +1,26 @@
+# /etc/conf.d/401kcoind: config file for /etc/init.d/401kcoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/401kcoin/401kcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/401kcoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/401kcoind.pid"
+
+# Where to write 401kcoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/401kcoind"
+
+# User and group to own 401kcoind process
+#BITCOIND_USER="401kcoin"
+#BITCOIND_GROUP="401kcoin"
+
+# Path to 401kcoind executable
+#BITCOIND_BIN="/usr/bin/401kcoind"
+
+# Nice value to run 401kcoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

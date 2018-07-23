@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=401KCoin
+Comment=401KCoin P2P Cryptocurrency
+Exec=401kcoin-qt %u
+Terminal=false
+Type=Application
+Icon=401kcoin128
+MimeType=x-scheme-handler/401kcoin;
+Categories=Office;Finance;
+Name[en_US]=401kcoin-qt.desktop

@@ -1,0 +1,6 @@
+usr/local/bin/401kcoin-qt usr/bin
+share/pixmaps/bitcoin32.xpm usr/share/pixmaps
+share/pixmaps/bitcoin16.xpm usr/share/pixmaps
+share/pixmaps/bitcoin128.png usr/share/pixmaps
+debian/401kcoin-qt.desktop usr/share/applications
+debian/401kcoin-qt.protocol usr/share/kde4/services/

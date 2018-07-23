@@ -1,0 +1,26 @@
+[Unit]
+Description=401K Coin's distributed currency daemon
+After=network.target
+
+[Service]
+User=401kcoin
+Group=401kcoin
+
+Type=forking
+PIDFile=/var/lib/401kcoind/401kcoind.pid
+
+ExecStart=/usr/bin/401kcoind -daemon -pid=/var/lib/401kcoind/401kcoind.pid \
+          -conf=/etc/401kcoin/401kcoin.conf -datadir=/var/lib/401kcoind
+
+ExecStop=-/usr/bin/401kcoin-cli -conf=/etc/401kcoin/401kcoin.conf \
+         -datadir=/var/lib/401kcoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

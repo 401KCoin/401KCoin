@@ -141,3 +141,4 @@ src/univalue/build-aux/test-driver
 
 !libleveldb.a
 !libmemenv.a
+!depends/Makefile

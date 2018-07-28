@@ -1817,7 +1817,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     // The following split & combine thresholds are important to security
     // Should not be adjusted if you don't understand the consequences
     //int64_t nCombineThreshold = 0;
-LogPrintf("CreateCoinStake() ok\n");
+
     txNew.vin.clear();
     txNew.vout.clear();
 
@@ -1846,7 +1846,7 @@ LogPrintf("CreateCoinStake() ok\n");
 
         nLastStakeSetUpdate = GetTime();
     }
-LogPrintf("CreateCoinStake() SelectStakeCoins() ok\n");
+
     if (setStakeCoins.empty())
         return false;
 
@@ -1878,7 +1878,7 @@ LogPrintf("CreateCoinStake() SelectStakeCoins() ok\n");
         uint256 hashProofOfStake = 0;
         COutPoint prevoutStake = COutPoint(pcoin.first->GetHash(), pcoin.second);
         nTxNewTime = GetAdjustedTime();
-LogPrintf("CreateCoinStake() CheckStakeKernelHash() before\n");
+
         //iterates each utxo inside of CheckStakeKernelHash()
         if (CheckStakeKernelHash(nBits, block, *pcoin.first, prevoutStake, nTxNewTime, nHashDrift, false, hashProofOfStake, true)) {
             //Double check that this will pass time requirements
@@ -1886,7 +1886,7 @@ LogPrintf("CreateCoinStake() CheckStakeKernelHash() before\n");
                 LogPrintf("CreateCoinStake() : kernel found, but it is too far in the past \n");
                 continue;
             }
-LogPrintf("CreateCoinStake() CheckStakeKernelHash() ok\n");
+
             // Found a kernel
             if (fDebug && GetBoolArg("-printcoinstake", false))
                 LogPrintf("CreateCoinStake : kernel found\n");
@@ -1943,7 +1943,7 @@ LogPrintf("CreateCoinStake() CheckStakeKernelHash() ok\n");
     }
     if (nCredit == 0 || nCredit > nBalance - nReserveBalance)
         return false;
-LogPrintf("5\n");
+
     // Calculate reward
     CAmount nReward;
     const CBlockIndex* pIndex0 = chainActive.Tip();
@@ -1976,7 +1976,6 @@ LogPrintf("5\n");
             break;
         }
     }
-LogPrintf("6\n");
     //Masternode payment
     FillBlockPayee(txNew, nMinFee, true);
 

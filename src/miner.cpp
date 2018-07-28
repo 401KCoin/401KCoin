@@ -127,7 +127,6 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     static int64_t nLastCoinStakeSearchTime = GetAdjustedTime(); // only initialized at startup
 
     if (fProofOfStake) {
-LogPrintf("CreateNewBlock() stake start\n");
         boost::this_thread::interruption_point();
         pblock->nTime = GetAdjustedTime();
         CBlockIndex* pindexPrev = chainActive.Tip();
@@ -135,7 +134,6 @@ LogPrintf("CreateNewBlock() stake start\n");
         CMutableTransaction txCoinStake;
         int64_t nSearchTime = pblock->nTime; // search to current time
         bool fStakeFound = false;
-LogPrintf("sCreateNewBlock() searchtime : %u, lasttime : %u\n", nSearchTime, nLastCoinStakeSearchTime);
         if (nSearchTime >= nLastCoinStakeSearchTime) {
             unsigned int nTxNewTime = 0;
             if (pwallet->CreateCoinStake(*pwallet, pblock->nBits, nSearchTime - nLastCoinStakeSearchTime, txCoinStake, nTxNewTime)) {
@@ -475,7 +473,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
     static int nMintableLastCheck = 0;
 
     while (fGenerateBitcoins || fProofOfStake) {
-        if (fProofOfStake && (GetTime() - nMintableLastCheck > 1 * 60)) // 5 minute check time
+        if (fProofOfStake && (GetTime() - nMintableLastCheck > 5 * 60)) // 5 minute check time
         {
             nMintableLastCheck = GetTime();
             fMintableCoins = pwallet->MintableCoins();
@@ -483,13 +481,13 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 
         if (fProofOfStake) {
             if (chainActive.Tip()->nHeight < Params().LAST_POW_BLOCK()) {
-                //MilliSleep(5000);
+                MilliSleep(5000);
                 continue;
             }
 
             if (chainActive.Tip()->nTime < Params().GenesisBlock().nTime || vNodes.empty() || pwallet->IsLocked() || !fMintableCoins || nReserveBalance >= pwallet->GetBalance()) {
                 nLastCoinStakeSearchInterval = 0;
-                MilliSleep(10000);
+                MilliSleep(60000);
                 continue;
             }
 
@@ -497,7 +495,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             {
                 if (GetTime() - mapHashedBlocks[chainActive.Tip()->nHeight] < max(pwallet->nHashInterval, (unsigned int)1)) // wait half of the nHashDrift with max wait of 3 minutes
                 {
-                    MilliSleep(10000);
+                    MilliSleep(60000);
                     continue;
                 }
             }
@@ -545,7 +543,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
         uint256 hashTarget = uint256().SetCompact(pblock->nBits);
         while (true) {
             unsigned int nHashesDone = 0;
-//MilliSleep(5000);
+
             uint256 hash;
             while (true) {
                 hash = pblock->GetHash();

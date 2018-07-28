@@ -248,6 +248,7 @@ bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64_t& nStakeModifier, int
     if (!mapBlockIndex.count(hashBlockFrom))
         return error("GetKernelStakeModifier() : block not indexed");
     const CBlockIndex* pindexFrom = mapBlockIndex[hashBlockFrom];
+    
     nStakeModifierHeight = pindexFrom->nHeight;
     nStakeModifierTime = pindexFrom->GetBlockTime();
     int64_t nStakeModifierSelectionInterval = GetStakeModifierSelectionInterval();
@@ -256,8 +257,7 @@ bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64_t& nStakeModifier, int
 
     // loop to find the stake modifier later by a selection interval
     while (nStakeModifierTime < pindexFrom->GetBlockTime() + nStakeModifierSelectionInterval) {
-LogPrintf("GetKernelStakeModifier() finding\n");
-LogPrintf("GetKernelStakeModifier() A = %u, B = %u\n", nStakeModifierTime, pindexFrom->GetBlockTime() + nStakeModifierSelectionInterval);
+        LogPrintf("%d, %d, %d:",nStakeModifierTime,pindexFrom->GetBlockTime(),nStakeModifierSelectionInterval);
         if (!pindexNext) {
             // Should never happen
             return error("Null pindexNext\n");
@@ -265,15 +265,11 @@ LogPrintf("GetKernelStakeModifier() A = %u, B = %u\n", nStakeModifierTime, pinde
 
         pindex = pindexNext;
         pindexNext = chainActive[pindexNext->nHeight + 1];
-//        if (pindex->GeneratedStakeModifier()) {
-    if(true) {
-LogPrintf("GetKernelStakeModifier() GeneratedStakeModifier() ok\n");
+        if (pindex->GeneratedStakeModifier()) {
             nStakeModifierHeight = pindex->nHeight;
             nStakeModifierTime = pindex->GetBlockTime();
-break;
         }
     }
-LogPrintf("GetKernelStakeModifier() ok\n");
     nStakeModifier = pindex->nStakeModifier;
     return true;
 }
@@ -298,7 +294,6 @@ bool stakeTargetHit(uint256 hashProofOfStake, int64_t nValueIn, uint256 bnTarget
 //instead of looping outside and reinitializing variables many times, we will give a nTimeTx and also search interval so that we can do all the hashing here
 bool CheckStakeKernelHash(unsigned int nBits, const CBlock blockFrom, const CTransaction txPrev, const COutPoint prevout, unsigned int& nTimeTx, unsigned int nHashDrift, bool fCheck, uint256& hashProofOfStake, bool fPrintProofOfStake)
 {
-LogPrintf("CheckStakeKernelHash() start\n");
     //assign new variables to make it easier to read
     int64_t nValueIn = txPrev.vout[prevout.n].nValue;
     unsigned int nTimeBlockFrom = blockFrom.GetBlockTime();
@@ -321,7 +316,6 @@ LogPrintf("CheckStakeKernelHash() start\n");
         LogPrintf("CheckStakeKernelHash(): failed to get kernel stake modifier \n");
         return false;
     }
-LogPrintf("GetKernelStakeModifier() ok\n");
     //create data stream once instead of repeating it in the loop
     CDataStream ss(SER_GETHASH, 0);
     ss << nStakeModifier;

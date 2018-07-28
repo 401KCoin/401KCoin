@@ -203,10 +203,10 @@ QT_TRANSLATE_NOOP("401kcoin-core", ""
 QT_TRANSLATE_NOOP("401kcoin-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("401kcoin-core", "(5512 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("401kcoin-core", "(5522 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("401kcoin-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("401kcoin-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("401kcoin-core", "(must be 5512 for mainnet)"),
+QT_TRANSLATE_NOOP("401kcoin-core", "(must be 5522 for mainnet)"),
 QT_TRANSLATE_NOOP("401kcoin-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("401kcoin-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("401kcoin-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),

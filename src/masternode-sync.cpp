@@ -229,7 +229,7 @@ void CMasternodeSync::ClearFulfilledRequest()
         pnode->ClearFulfilledRequest("busync");
     }
 }
-//myfix
+
 void CMasternodeSync::Process()
 {
     static int tick = 0;

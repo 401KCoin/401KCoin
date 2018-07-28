@@ -159,7 +159,7 @@ public:
         nMaxMoneyOut = 25000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 100;//myfix
+        nLastPOWBlock = 100;
         nModifierUpdateBlock = 1; // we use the version 2 for 401K
 
         const char* pszTimestamp = "401KCoin Core Developers Team";

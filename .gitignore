@@ -138,3 +138,6 @@ src/univalue/build-aux/install-sh
 src/univalue/build-aux/ltmain.sh
 src/univalue/build-aux/missing
 src/univalue/build-aux/test-driver
+
+!libleveldb.a
+!libmemenv.a

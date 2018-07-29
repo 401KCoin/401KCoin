@@ -3283,8 +3283,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Você deve especificar uma masternodeprivkey na configuração. Favor verificar o manual para obter ajuda.</translation>
     </message>
     <message>
-        <source>(5522 could be used only on mainnet)</source>
-        <translation>(5522 could be used only on mainnet)</translation>
+        <source>(6622 could be used only on mainnet)</source>
+        <translation>(6622 could be used only on mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -3295,8 +3295,8 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>(padrão: 1)</translation>
     </message>
     <message>
-        <source>(must be 5522 for mainnet)</source>
-        <translation>(deve ser 5522 para mainnet)</translation>
+        <source>(must be 6622 for mainnet)</source>
+        <translation>(deve ser 6622 para mainnet)</translation>
     </message>
     <message>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>

@@ -256,9 +256,9 @@ bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64_t& nStakeModifier, int
 
     // loop to find the stake modifier later by a selection interval
     while (nStakeModifierTime < pindexFrom->GetBlockTime() + nStakeModifierSelectionInterval) {
-        LogPrintf("%d, %d, %d:",nStakeModifierTime,pindexFrom->GetBlockTime(),nStakeModifierSelectionInterval);
         if (!pindexNext) {
             // Should never happen
+            LogPrintf("%d, %d, %d:",nStakeModifierTime, pindexFrom->GetBlockTime(), nStakeModifierSelectionInterval);
             return error("Null pindexNext\n");
         }
 

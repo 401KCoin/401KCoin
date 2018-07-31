@@ -12,7 +12,7 @@ Users will also be able to exchange points and miles between real-world affiliat
 
 This real world implementation, yet to be named, will accessible by not only large retailers and companies, but small businesses as well. A custom API will be created to allow businesses globally to create and connect to their loyalty program to the 401K loyalty rewards program wallet and exchange.
 
-Join our growing Official Discord Server to speak directly with the team: https://discord.gg/TCryPGc
+Join our growing Official Discord Server to speak directly with the team: https://discord.gg/F86UGUU
 
 ### Coin Specs
 <table>
@@ -23,7 +23,7 @@ Join our growing Official Discord Server to speak directly with the team: https:
 <tr><td>Premine</td><td>1,500,000 401K</td></tr>
 <tr><td>Masternode</td><td>5,000 401K</td></tr>
 <tr><td>Block Rewards</td><td>75% Masternodes/ 25% POS Wallets</td></tr>
-<tr><td>Maturity</td><td>60 Minutes</td></tr>
+<tr><td>Maturity</td><td>360 Minutes</td></tr>
 <tr><td>Max Supply</td><td>100+ Years</td></tr>
 
 </table>

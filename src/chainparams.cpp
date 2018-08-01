@@ -152,7 +152,7 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 2 * 60; // 401K coin: 2 minutes
+        nTargetTimespan = 60 * 60; // 401K coin: 60 minutes
         nTargetSpacing = 2 * 60;  // 401K coin: 2 minutes
         nMaturity = 15;
         nMasternodeCountDrift = 20;

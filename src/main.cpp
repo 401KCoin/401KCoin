@@ -1625,32 +1625,28 @@ int64_t GetBlockValue(int nHeight)
 
     if (nHeight < Params().LAST_POW_BLOCK())
         nSubsidy = 15000 * COIN;
-    else if (nHeight <= 5000)
+    else if (nHeight <= 25000)
         nSubsidy = 1 * COIN;
-    else if (nHeight > 5000 && nHeight <= 10000)
+    else if (nHeight > 25000 && nHeight <= 30000)
         nSubsidy = 10 * COIN;
-    else if (nHeight > 10000 && nHeight <= 15000)
-        nSubsidy = 25 * COIN;
-    else if (nHeight > 15000 && nHeight <= 20000)
+    else if (nHeight > 30000 && nHeight <= 35000)
+        nSubsidy = 20 * COIN;
+    else if (nHeight > 35000 && nHeight <= 40000)
         nSubsidy = 30 * COIN;
-    else if (nHeight > 20000 && nHeight <= 30000)
-        nSubsidy = 25 * COIN;
-    else if (nHeight > 30000 && nHeight <= 40000)
-        nSubsidy = 20 * COIN;
     else if (nHeight > 40000 && nHeight <= 50000)
-        nSubsidy = 15 * COIN;
+        nSubsidy = 1 * COIN;
     else if (nHeight > 50000 && nHeight <= 60000)
+        nSubsidy = 10 * COIN;
+    else if (nHeight > 60000 && nHeight <= 70000)
         nSubsidy = 20 * COIN;
-    else if (nHeight > 60000 && nHeight <= 90000)
-        nSubsidy = 15 * COIN;
-    else if (nHeight > 90000 && nHeight <= 95000)
-        nSubsidy = 25 * COIN;
-    else if (nHeight > 95000 && nHeight <= 100000)
+    else if (nHeight > 70000 && nHeight <= 80000)
+        nSubsidy = 30 * COIN;
+    else if (nHeight > 90000 && nHeight <= 100000)
         nSubsidy = 20 * COIN;
     else if (nHeight > 100000 && nHeight <= 1100000)
         nSubsidy = 10 * COIN;
     else
-        nSubsidy = 1.25 * COIN;
+        nSubsidy = 1.2 * COIN;
 
     // Check if we reached the coin max supply.
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;

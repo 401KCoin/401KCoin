@@ -32,15 +32,15 @@ Join our growing Official Discord Server to speak directly with the team: https:
 
 <table>
 <th>Blocks</th><th>Block Rewards</th><th>Days</th>
-<tr><td>100 - 25,000</td><td>1 401K Coin</td><td>7</td></tr>
+<tr><td>100 - 25,000</td><td>1 401K Coin</td><td>28</td></tr>
 <tr><td>25,001 - 30,000</td><td>10 401K Coins</td><td>7</td></tr>
 <tr><td>30,001 - 35,000</td><td>20 401K Coin</td><td>7</td></tr>
 <tr><td>35,001 - 40,000</td><td>30 401K Coin</td><td>7</td></tr>
-<tr><td>40,001 - 50,000</td><td>1 401K Coin</td><td>14</td></tr>
-<tr><td>50,001 - 60,000</td><td>10 401K Coin</td><td>14</td></tr>
-<tr><td>60,001 - 70,000</td><td>20 401K Coin</td><td>14</td></tr>
-<tr><td>80,001 - 90,000</td><td>30 401K Coin</td><td>14</td></tr>
-<tr><td>90,001 - 100,000</td><td>20 401K Coin</td><td>14</td></tr>
+<tr><td>40,001 - 50,000</td><td>10 401K Coin</td><td>14</td></tr>
+<tr><td>50,001 - 60,000</td><td>20 401K Coin</td><td>14</td></tr>
+<tr><td>60,001 - 70,000</td><td>30 401K Coin</td><td>14</td></tr>
+<tr><td>80,001 - 90,000</td><td>20 401K Coin</td><td>14</td></tr>
+<tr><td>90,001 - 100,000</td><td>10 401K Coin</td><td>14</td></tr>
 <tr><td>100,000 - 1,100,000</td><td>5 401K Coin</td><td>1,388</td></tr>
 </table>
 

@@ -42,7 +42,7 @@ Join our growing Official Discord Server to speak directly with the team: https:
 <tr><td>70,001 - 80,000</td><td>20 401K Coin</td><td>14</td></tr>
 <tr><td>80,001 - 900,000</td><td>15 401K Coin</td><td>14</td></tr>
 <tr><td>90,001 - 100,000</td><td>10 401K Coin</td><td>14</td></tr>
-<tr><td>1,000,001 - 1,100,000</td><td>5 401K Coin</td><td>1,388</td></tr>
+<tr><td>100,001 - 1,100,000</td><td>5 401K Coin</td><td>1,388</td></tr>
 </table>
 
 Note: Rewards halve every 1,000,000 blocks per 1,388 days until max supply is reached (100+ years).

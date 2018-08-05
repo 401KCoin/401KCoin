@@ -1,16 +1,21 @@
 401K Coin Core Integration Repository
 =====================================
 
-401K Coin is an open source cryptocurrency focused on providing coin holders with 5 unique rewards programs. As a modified fork of PIVX, 401K has a keen focus on environmental sustainability and transaction privacy. By implementing Proof of Stake protocol only, 401K reduces its carbon footprint and by decreasing block rewards over time, hyperinflation is curbed. In addition, the total coin supply of 401K is low and fixed at 25,000,000.
+401K Coin is an open source cryptocurrency focused on providing coin holders with 11 unique rewards programs. As a modified fork of PIVX, 401K has a keen focus on environmental sustainability and transaction privacy. By implementing Proof of Stake protocol only, 401K reduces its carbon footprint and by decreasing block rewards over time, hyperinflation is curbed. In addition, the total coin supply of 401K is low and fixed at 25,000,000.
 
-Having 5 reward programs that are implemented at progressing milestones is deliberate, so that those who secure and speed the network through holding are rewarded over time. Since POW is not implemented, and the rewards reduce in amount over time, the life cycle of the coin is increased and hyperinflation is reduced. This is critical for future implementation in its real world applications.
+Having 11 reward programs that are implemented at progressing milestones is deliberate, so that those who secure and speed the network through holding are rewarded over time. Since POW is not implemented, and the rewards reduce in amount over time, the life cycle of the coin is increased and hyperinflation is reduced. This is critical for future implementation in its real world applications.
 
-### Real World Use
-The 401K Team has currently begun work on the design and implementation of a proprietary loyalty rewards program wallet and for real world affiliates and their points programs along with a MasterPool for 401K Coin. Users will be able to login to the mobile or web version of this loyalty program management wallet (separate from their 401K Coin staking wallets) and manage all of their loyalty programs in one simple interface. 
+### Retirement Integration:
 
-Users will also be able to exchange points and miles between real-world affiliate reward programs and 401K Coin through the proprietary 401K MasterExchange. Redemption for shopping and gift cards will be just as simple. They will be able to park real world loyalty program points or miles in the 401K MasterPool, a proprietary staking pool, to prevent said points from expiring. While storing coins in the 401K MasterPool, users will earn 401K Rewards based off of their network weight. 
+During the first quarter of 2019 we will be implenting “Retirement Integration”, which is where all current Masternode holders who have an active 401K or comparable reitrement plan, will be eligible to receive a 15% reward bonus. We are eagerly working with multiple parent companies and investment firms to initiate a smooth roll out plan. All eligible members will have to show proof of current retirement program to receive bonus. If 401K plans are not available in your country, we will be working to integrate the aptly named retirement plans associated with your country.
 
-This real world implementation, yet to be named, will accessible by not only large retailers and companies, but small businesses as well. A custom API will be created to allow businesses globally to create and connect to their loyalty program to the 401K loyalty rewards program wallet and exchange.
+### Fee Free Pool:
+
+The 401K Coin project is the first in the cryptocurrency space to focus on a fee free staking/masternode pool for users.  In the theme of residual income, for many years to come, the 401K Fee Free Pool will give users of any financial standing a place to deposit their coins, and collect dividends.  There will be no minimum deposit, allowing everyone to participate.  Users will simply need to deposit their 401K Coin into the pool, and allow the increased network weight of the pool to help all users earn greater, and faster dividends.
+
+The 401K Fee Free exchange will be developed to allow for desktop as well as mobile login to the interface.
+
+We are happy to announce the Fee Free Pool has begun development and is expected for release in Q4 of 2018.  This will include masternode, and stake sharing alike
 
 Join our growing Official Discord Server to speak directly with the team: https://discord.gg/F86UGUU
 

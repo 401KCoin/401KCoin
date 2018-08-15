@@ -3799,8 +3799,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "401K Coin Alert" admin@foo.com
         <translation>Debes especificar un masternodeprivkey en la configuración. Por favor mira la documentación por ayuda.</translation>
     </message>
     <message>
-        <source>(5502 could be used only on mainnet)</source>
-        <translation>(5502 puede ser utilizado solo en mainnet)</translation>
+        <source>(6622 could be used only on mainnet)</source>
+        <translation>(6622 puede ser utilizado solo en mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -3811,8 +3811,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "401K Coin Alert" admin@foo.com
         <translation>(predeterminado: 1)</translation>
     </message>
     <message>
-        <source>(must be 5502 for mainnet)</source>
-        <translation>(debe ser 5502 para un mainnet)</translation>
+        <source>(must be 6622 for mainnet)</source>
+        <translation>(debe ser 6622 para un mainnet)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>

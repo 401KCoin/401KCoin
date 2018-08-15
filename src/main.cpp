@@ -77,7 +77,7 @@ bool fCheckBlockIndex = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
 
-unsigned int nStakeMinAge = 60 * 60;
+unsigned int nStakeMinAge = 6 * 60 * 60;
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in u401k) are considered zero fee (for relaying and mining)
@@ -1625,16 +1625,30 @@ int64_t GetBlockValue(int nHeight)
 
     if (nHeight < Params().LAST_POW_BLOCK())
         nSubsidy = 15000 * COIN;
-    else if (nHeight <= 5000)
+    else if (nHeight <= 25000)
         nSubsidy = 1 * COIN;
-    else if (nHeight > 5000 && nHeight <= 25000)
-        nSubsidy = 80 * COIN;
-    else if (nHeight > 25000 && nHeight <= 100000)
-        nSubsidy = 60 * COIN;
-    else if (nHeight > 100000 && nHeight <= 1100000)
+    else if (nHeight > 25000 && nHeight <= 30000)
+        nSubsidy = 10 * COIN;
+    else if (nHeight > 30000 && nHeight <= 35000)
+        nSubsidy = 20 * COIN;
+    else if (nHeight > 35000 && nHeight <= 40000)
         nSubsidy = 30 * COIN;
+    else if (nHeight > 40000 && nHeight <= 50000)
+        nSubsidy = 10 * COIN;
+    else if (nHeight > 50000 && nHeight <= 60000)
+        nSubsidy = 20 * COIN;
+    else if (nHeight > 60000 && nHeight <= 70000)
+        nSubsidy = 30 * COIN;
+    else if (nHeight > 70000 && nHeight <= 80000)
+        nSubsidy = 20 * COIN;
+    else if (nHeight > 80000 && nHeight <= 90000)
+        nSubsidy = 15 * COIN;
+    else if (nHeight > 90000 && nHeight <= 100000)
+        nSubsidy = 10 * COIN;
+    else if (nHeight > 100000 && nHeight <= 1100000)
+        nSubsidy = 5 * COIN;
     else
-        nSubsidy = 1.25 * COIN;
+        nSubsidy = 1.2 * COIN;
 
     // Check if we reached the coin max supply.
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
@@ -1657,7 +1671,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         return 0;
 
     // Check if we reached coin supply
-    ret = blockValue * 0.70; // 70% of block reward
+    ret = blockValue * 0.75; // 75% of block reward
 
     return ret;
 }

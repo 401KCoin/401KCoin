@@ -36,7 +36,7 @@ bool CMasternodeSync::IsBlockchainSynced()
 
     // if the last call to this function was more than 60 minutes ago (client was in sleep mode) reset the sync process
     if (GetTime() - lastProcess > 60 * 60) {
-        Reset();LogPrintf("IsBlockchainSynced() : \n");
+        Reset();
         fBlockchainSynced = false;
     }
     lastProcess = GetTime();
@@ -229,7 +229,7 @@ void CMasternodeSync::ClearFulfilledRequest()
         pnode->ClearFulfilledRequest("busync");
     }
 }
-//myfix
+
 void CMasternodeSync::Process()
 {
     static int tick = 0;
@@ -284,7 +284,6 @@ void CMasternodeSync::Process()
 
         //set to synced
         if (RequestedMasternodeAssets == MASTERNODE_SYNC_SPORKS) {
-
             if (pnode->HasFulfilledRequest("getspork")) continue;
             pnode->FulfilledRequest("getspork");
 
@@ -297,7 +296,7 @@ void CMasternodeSync::Process()
 
         if (pnode->nVersion >= masternodePayments.GetMinMasternodePaymentsProto()) {
             if (RequestedMasternodeAssets == MASTERNODE_SYNC_LIST) {
-                LogPrintf("masternode CMasternodeSync::Process() - lastMasternodeList %lld (GetTime() - MASTERNODE_SYNC_TIMEOUT) %lld\n", lastMasternodeList, GetTime() - MASTERNODE_SYNC_TIMEOUT);
+                LogPrint("masternode", "CMasternodeSync::Process() - lastMasternodeList %lld (GetTime() - MASTERNODE_SYNC_TIMEOUT) %lld\n", lastMasternodeList, GetTime() - MASTERNODE_SYNC_TIMEOUT);
                 if (lastMasternodeList > 0 && lastMasternodeList < GetTime() - MASTERNODE_SYNC_TIMEOUT * 2 && RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD) { //hasn't received a new item in the last five seconds, so we'll move to the
                     GetNextAsset();
                     return;
@@ -367,16 +366,19 @@ void CMasternodeSync::Process()
 
         if (pnode->nVersion >= ActiveProtocol()) {
             if (RequestedMasternodeAssets == MASTERNODE_SYNC_BUDGET) {
+
                 // We'll start rejecting votes if we accidentally get set as synced too soon
                 if (lastBudgetItem > 0 && lastBudgetItem < GetTime() - MASTERNODE_SYNC_TIMEOUT * 2 && RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD) { 
                     
                     // Hasn't received a new item in the last five seconds, so we'll move to the
                     GetNextAsset();
+
                     // Try to activate our masternode if possible
                     activeMasternode.ManageStatus();
 
                     return;
                 }
+
                 // timeout
                 if (lastBudgetItem == 0 &&
                     (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3 || GetTime() - nAssetSyncStarted > MASTERNODE_SYNC_TIMEOUT * 5)) {
@@ -385,10 +387,12 @@ void CMasternodeSync::Process()
                     activeMasternode.ManageStatus();
                     return;
                 }
+
                 if (pnode->HasFulfilledRequest("busync")) continue;
                 pnode->FulfilledRequest("busync");
 
                 if (RequestedMasternodeAttempt >= MASTERNODE_SYNC_THRESHOLD * 3) return;
+
                 uint256 n = 0;
                 pnode->PushMessage("mnvs", n); //sync masternode votes
                 RequestedMasternodeAttempt++;
